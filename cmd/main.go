@@ -1,6 +1,8 @@
 package main
 
-import socks5 "github.com/srshbhryn/go-socks5"
+import (
+	socks5 "github.com/srshbhryn/go-socks5"
+)
 
 func main() {
 	conf := &socks5.Config{}
@@ -8,9 +10,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
-	// Create SOCKS5 proxy on localhost port 8000
-	if err := server.ListenAndServe("tcp", "127.0.0.1:8000"); err != nil {
+	if err := server.ListenAndServe("tcp", "127.0.0.1:1515"); err != nil {
 		panic(err)
 	}
 }
